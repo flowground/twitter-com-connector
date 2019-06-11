@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "accuracy": {
+            "required": false,
+            "type": "string"
+        },
+        "granularity": {
+            "required": false,
+            "type": "string"
+        },
+        "contained_within": {
+            "required": false,
+            "type": "string"
+        },
+        "callback": {
+            "required": false,
+            "type": "string"
+        },
+        "attribute_street_address": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

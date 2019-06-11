@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "lat": {
+            "required": true,
+            "type": "string"
+        },
+        "long": {
+            "required": true,
+            "type": "string"
+        },
+        "accuracy": {
+            "required": false,
+            "type": "string"
+        },
+        "granularity": {
+            "required": false,
+            "type": "string"
+        },
+        "max_results": {
+            "required": false,
+            "type": "string"
+        },
+        "callback": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "include_entities": {
+            "required": false,
+            "type": "string"
+        },
+        "skip_status": {
+            "required": false,
+            "type": "string"
+        },
+        "cursor": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

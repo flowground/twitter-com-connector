@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "contained_within": {
+            "required": false,
+            "type": "string"
+        },
+        "callback": {
+            "required": false,
+            "type": "string"
+        },
+        "attribute_street_address": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

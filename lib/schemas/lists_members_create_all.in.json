@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "owner_screen_name": {
+            "required": false,
+            "type": "string"
+        },
+        "owner_id": {
+            "required": false,
+            "type": "string"
+        },
+        "user_id": {
+            "required": false,
+            "type": "string"
+        },
+        "screen_name": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

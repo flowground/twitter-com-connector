@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "profile_background_color": {
+            "required": false,
+            "type": "string"
+        },
+        "profile_link_color": {
+            "required": false,
+            "type": "string"
+        },
+        "profile_sidebar_border_color": {
+            "required": false,
+            "type": "string"
+        },
+        "profile_sidebar_fill_color": {
+            "required": false,
+            "type": "string"
+        },
+        "profile_text_color": {
+            "required": false,
+            "type": "string"
+        },
+        "include_entities": {
+            "required": false,
+            "type": "string"
+        },
+        "skip_status": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

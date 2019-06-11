@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "follow": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

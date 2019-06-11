@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "skip_status": {
+            "required": false,
+            "type": "string"
+        },
+        "Content_Type": {
+            "required": true,
+            "type": "string",
+            "default": "multipart/form-data"
+        }
+    }
+}

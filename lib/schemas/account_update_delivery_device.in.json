@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "device": {
+            "required": true,
+            "type": "string"
+        },
+        "include_entities": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

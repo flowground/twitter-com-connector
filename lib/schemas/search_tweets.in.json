@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "q": {
+            "required": true,
+            "type": "string"
+        },
+        "geocode": {
+            "required": false,
+            "type": "string"
+        },
+        "lang": {
+            "required": false,
+            "type": "string"
+        },
+        "locale": {
+            "required": false,
+            "type": "string"
+        },
+        "result_type": {
+            "required": false,
+            "type": "string"
+        },
+        "count": {
+            "required": false,
+            "type": "string"
+        },
+        "until": {
+            "required": false,
+            "type": "string"
+        },
+        "since_id": {
+            "required": false,
+            "type": "string"
+        },
+        "max_id": {
+            "required": false,
+            "type": "string"
+        },
+        "include_entities": {
+            "required": false,
+            "type": "string"
+        },
+        "callback": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

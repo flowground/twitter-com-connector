@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {
+            "required": false,
+            "type": "integer"
+        },
+        "max_id": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "since_id": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "trim_user": {
+            "required": false,
+            "type": "string"
+        },
+        "exclude_replies": {
+            "required": false,
+            "type": "string"
+        },
+        "contributor_details": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

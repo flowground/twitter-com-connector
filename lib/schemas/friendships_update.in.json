@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "device": {
+            "required": true,
+            "type": "string"
+        },
+        "retweets": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

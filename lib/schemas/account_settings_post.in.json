@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "trend_location_woeid": {
+            "required": false,
+            "type": "string"
+        },
+        "sleep_time_enabled": {
+            "required": false,
+            "type": "string"
+        },
+        "start_sleep_time": {
+            "required": false,
+            "type": "string"
+        },
+        "end_sleep_time": {
+            "required": false,
+            "type": "string"
+        },
+        "time_zone": {
+            "required": false,
+            "type": "string"
+        },
+        "lang": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

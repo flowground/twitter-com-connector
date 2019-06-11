@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "maxwidth": {
+            "required": false,
+            "type": "integer"
+        },
+        "hide_media": {
+            "required": false,
+            "type": "string"
+        },
+        "hide_thread": {
+            "required": false,
+            "type": "string"
+        },
+        "omit_script": {
+            "required": false,
+            "type": "string"
+        },
+        "align": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "left",
+                "right",
+                "center",
+                "none"
+            ]
+        },
+        "related": {
+            "required": false,
+            "type": "string"
+        },
+        "lang": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

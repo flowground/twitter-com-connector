@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "stringify_ids": {
+            "required": false,
+            "type": "string"
+        },
+        "cursor": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

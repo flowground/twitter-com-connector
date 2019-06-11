@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "user_id": {
+            "required": false,
+            "type": "string"
+        },
+        "screen_name": {
+            "required": false,
+            "type": "string"
+        },
+        "cursor": {
+            "required": false,
+            "type": "string"
+        },
+        "filter_to_owned_lists": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

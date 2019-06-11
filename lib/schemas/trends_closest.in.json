@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "lat": {
+            "required": false,
+            "type": "string"
+        },
+        "long": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

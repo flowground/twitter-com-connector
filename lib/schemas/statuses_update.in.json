@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "required": true,
+            "type": "string",
+            "default": "Posting from @apigee's API test console. It's like a command line for the Twitter API! #apitools"
+        },
+        "in_reply_to_status_id": {
+            "required": false,
+            "type": "string"
+        },
+        "lat": {
+            "required": false,
+            "type": "string",
+            "default": "37.426363"
+        },
+        "long": {
+            "required": false,
+            "type": "string",
+            "default": "-122.141114"
+        },
+        "place_id": {
+            "required": false,
+            "type": "string"
+        },
+        "display_coordinates": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "false",
+                "true",
+                ""
+            ],
+            "default": "false"
+        },
+        "trim_user": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

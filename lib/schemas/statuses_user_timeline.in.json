@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {
+            "required": false,
+            "type": "integer"
+        },
+        "since_id": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "max_id": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "trim_user": {
+            "required": false,
+            "type": "string"
+        },
+        "exclude_replies": {
+            "required": false,
+            "type": "boolean"
+        },
+        "contributor_details": {
+            "required": false,
+            "type": "boolean"
+        },
+        "include_rts": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "mode": {
+            "required": false,
+            "type": "string"
+        },
+        "description": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

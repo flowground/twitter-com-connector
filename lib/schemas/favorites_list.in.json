@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {
+            "required": false,
+            "type": "string"
+        },
+        "since_id": {
+            "required": false,
+            "type": "string"
+        },
+        "max_id": {
+            "required": false,
+            "type": "string"
+        },
+        "include_entities": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

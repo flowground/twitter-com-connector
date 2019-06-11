@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "callback": {
+            "required": false,
+            "type": "string"
+        },
+        "attribute_street_address": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

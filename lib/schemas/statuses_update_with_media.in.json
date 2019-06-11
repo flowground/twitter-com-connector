@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "media": {
+            "required": true,
+            "type": "string"
+        },
+        "possibly_sensitive": {
+            "required": false,
+            "type": "string"
+        },
+        "in_reply_to_status_id": {
+            "required": false,
+            "type": "string"
+        },
+        "lat": {
+            "required": false,
+            "type": "string"
+        },
+        "long": {
+            "required": false,
+            "type": "string"
+        },
+        "place_id": {
+            "required": false,
+            "type": "string"
+        },
+        "display_coordinates": {
+            "required": false,
+            "type": "string"
+        },
+        "Content_Type": {
+            "required": true,
+            "type": "string",
+            "default": "multipart/form-data"
+        }
+    }
+}

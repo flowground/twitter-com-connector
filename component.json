@@ -1,0 +1,1444 @@
+{
+    "title": "Twitter",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/twitter.com/1.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.twitter.com/1.1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "account_settings_get": {
+            "main": "./lib/actions/account_settings_get.js",
+            "title": "Returns settings (including\ncurrent trend, geo and sleep time information) for the authenticating user.",
+            "description": "Returns settings (including\ncurrent trend, geo and sleep time information) for the authenticating user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/account_settings_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "account_settings_post": {
+            "main": "./lib/actions/account_settings_post.js",
+            "title": "Updates the\nauthenticating user's settings.",
+            "description": "Updates the\nauthenticating user's settings.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/account_settings_post.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "account_update_delivery_device": {
+            "main": "./lib/actions/account_update_delivery_device.js",
+            "title": "Sets which\ndevice Twitter delivers updates to for the authenticating user. Sending none as the device parameter\nwill disable SMS updates.",
+            "description": "Sets which\ndevice Twitter delivers updates to for the authenticating user. Sending none as the device parameter\nwill disable SMS updates.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/account_update_delivery_device.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "account_update_profile": {
+            "main": "./lib/actions/account_update_profile.js",
+            "title": "Sets values that\nusers are able to set under the Account tab of their settings page. Only the parameters specified\nwill be updated.",
+            "description": "Sets values that\nusers are able to set under the Account tab of their settings page. Only the parameters specified\nwill be updated.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/account_update_profile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "accounts_update_profile_background_image": {
+            "main": "./lib/actions/accounts_update_profile_background_image.js",
+            "title": "Updates the authenticating user's profile background image. This method can also be used to enable\nor disable the profile background image. Although each parameter is marked as optional, at least one\nof image, tile or use must be provided when making this request.",
+            "description": "Updates the authenticating user's profile background image. This method can also be used to enable\nor disable the profile background image. Although each parameter is marked as optional, at least one\nof image, tile or use must be provided when making this request.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/accounts_update_profile_background_image.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "accounts_update_profile_colors": {
+            "main": "./lib/actions/accounts_update_profile_colors.js",
+            "title": "Sets one or\nmore hex values that control the color scheme of the authenticating user's profile page on\ntwitter.com.\nEach parameter's value must be a valid hexidecimal value, and may be either three or six characters\n(ex: #fff or #ffffff).",
+            "description": "Sets one or\nmore hex values that control the color scheme of the authenticating user's profile page on\ntwitter.com.\nEach parameter's value must be a valid hexidecimal value, and may be either three or six characters\n(ex: #fff or #ffffff).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/accounts_update_profile_colors.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "accounts_update_profile_image": {
+            "main": "./lib/actions/accounts_update_profile_image.js",
+            "title": "Updates the\nauthenticating user's profile image. Note that this method expects raw multipart data, not a URL to\nan image. This method asynchronously processes the uploaded file before updating the user's profile\nimage URL. You can either update your local cache the next time you request the user's information,\nor, at least 5 seconds after uploading the image, ask for the updated URL using GET\nusers/profile_image/:screen_name\n(https://dev.twitter.com/docs/api/1/get/users/profile_image/:screen_name).",
+            "description": "Updates the\nauthenticating user's profile image. Note that this method expects raw multipart data, not a URL to\nan image. This method asynchronously processes the uploaded file before updating the user's profile\nimage URL. You can either update your local cache the next time you request the user's information,\nor, at least 5 seconds after uploading the image, ask for the updated URL using GET\nusers/profile_image/:screen_name\n(https://dev.twitter.com/docs/api/1/get/users/profile_image/:screen_name).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/accounts_update_profile_image.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "application_rate_limit_status": {
+            "main": "./lib/actions/application_rate_limit_status.js",
+            "title": "Returns the\ncurrent rate limits for\nmethods belonging to the specified resource families.\n\nEach 1.1 API resource belongs to a \"resource family\" which is indicated in its method documentation.\nYou can typically determine a method's resource family from the first component of the path after\nthe resource version.\n\nThis method responds with a map of methods belonging to the families specified by the resources\nparameter, the current remaining uses for each of those resources within the current rate limiting\nwindow, and its expiration time in epoch time. It also includes a rate_limit_context field that\nindicates the current access token context.\n\nYou may also issue requests to this method without any parameters to receive a map of all rate\nlimited GET methods. If your application only uses a few of methods, please explicitly provide a\nresources parameter with the specified resource families you work with.",
+            "description": "Returns the\ncurrent rate limits for\nmethods belonging to the specified resource families.\n\nEach 1.1 API resource belongs to a \"resource family\" which is indicated in its method documentation.\nYou can typically determine a method's resource family from the first component of the path after\nthe resource version.\n\nThis method responds with a map of methods belonging to the families specified by the resources\nparameter, the current remaining uses for each of those resources within the current rate limiting\nwindow, and its expiration time in epoch time. It also includes a rate_limit_context field that\nindicates the current access token context.\n\nYou may also issue requests to this method without any parameters to receive a map of all rate\nlimited GET methods. If your application only uses a few of methods, please explicitly provide a\nresources parameter with the specified resource families you work with.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/application_rate_limit_status.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blocks_create": {
+            "main": "./lib/actions/blocks_create.js",
+            "title": "Blocks the specified user from\nfollowing the authenticating user. In addition the blocked user will not show in the authenticating\nusers mentions or timeline (unless retweeted by another user). If a follow or friend relationship\nexists it is destroyed.",
+            "description": "Blocks the specified user from\nfollowing the authenticating user. In addition the blocked user will not show in the authenticating\nusers mentions or timeline (unless retweeted by another user). If a follow or friend relationship\nexists it is destroyed.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blocks_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blocks_destroy": {
+            "main": "./lib/actions/blocks_destroy.js",
+            "title": "Un-blocks the user specified\nin the ID parameter for the authenticating user. Returns the un-blocked user in the requested format\nwhen successful. If relationships existed before the block was instated, they will not be restored.",
+            "description": "Un-blocks the user specified\nin the ID parameter for the authenticating user. Returns the un-blocked user in the requested format\nwhen successful. If relationships existed before the block was instated, they will not be restored.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blocks_destroy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blocks_ids": {
+            "main": "./lib/actions/blocks_ids.js",
+            "title": "Returns an array of numeric user\nids the authenticating user is blocking.",
+            "description": "Returns an array of numeric user\nids the authenticating user is blocking.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blocks_ids.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blocks_list": {
+            "main": "./lib/actions/blocks_list.js",
+            "title": "Allows one to enable or\ndisable retweets and device notifications from the specified user.",
+            "description": "Allows one to enable or\ndisable retweets and device notifications from the specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blocks_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "direct_messages": {
+            "main": "./lib/actions/direct_messages.js",
+            "title": "Returns the 20 most recent\ndirect messages sent to the authenticating user. Includes detailed information about the sender and\nrecipient user. You can request up to 200 direct messages per call, up to a maximum of 800 incoming\nDMs.\n\nImportant: This method requires an access token with RWD (read, write and direct message)\npermissions.\nConsult The Application Permission Model for more information.",
+            "description": "Returns the 20 most recent\ndirect messages sent to the authenticating user. Includes detailed information about the sender and\nrecipient user. You can request up to 200 direct messages per call, up to a maximum of 800 incoming\nDMs.\n\nImportant: This method requires an access token with RWD (read, write and direct message)\npermissions.\nConsult The Application Permission Model for more information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/direct_messages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "direct_messages_destroy": {
+            "main": "./lib/actions/direct_messages_destroy.js",
+            "title": "Destroys the direct\nmessage specified in the required ID parameter. The authenticating user must be the recipient of the\nspecified direct message.\n\nImportant: This method requires an access token with RWD (read, write and direct message)\npermissions.\nConsult The Application Permission Model for more information.",
+            "description": "Destroys the direct\nmessage specified in the required ID parameter. The authenticating user must be the recipient of the\nspecified direct message.\n\nImportant: This method requires an access token with RWD (read, write and direct message)\npermissions.\nConsult The Application Permission Model for more information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/direct_messages_destroy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "direct_messages_new": {
+            "main": "./lib/actions/direct_messages_new.js",
+            "title": "Sends a new direct\nmessage to the specified user from the authenticating user. Requires both the user and text\nparameters and must be a POST. Returns the sent message in the requested format if successful.",
+            "description": "Sends a new direct\nmessage to the specified user from the authenticating user. Requires both the user and text\nparameters and must be a POST. Returns the sent message in the requested format if successful.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/direct_messages_new.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "direct_messages_sent": {
+            "main": "./lib/actions/direct_messages_sent.js",
+            "title": "Returns the 20 most\nrecent direct messages sent by the authenticating user. Includes detailed information about the\nsender and recipient user. You can request up to 200 direct messages per call, up to a maximum of\n800 outgoing DMs.\n\nImportant: This method requires an access token with RWD (read, write and direct message)\npermissions. Consult The Application Permission Model for more information.",
+            "description": "Returns the 20 most\nrecent direct messages sent by the authenticating user. Includes detailed information about the\nsender and recipient user. You can request up to 200 direct messages per call, up to a maximum of\n800 outgoing DMs.\n\nImportant: This method requires an access token with RWD (read, write and direct message)\npermissions. Consult The Application Permission Model for more information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/direct_messages_sent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "direct_messages_show": {
+            "main": "./lib/actions/direct_messages_show.js",
+            "title": "Returns a single direct\nmessage, specified by an id parameter. Like the /1.1/direct_messages.format request, this method\nwill include the user objects of the sender and recipient.\n\nImportant: This method requires an access token with RWD (read, write and direct message)\npermissions.\nConsult The Application Permission Model for more information.",
+            "description": "Returns a single direct\nmessage, specified by an id parameter. Like the /1.1/direct_messages.format request, this method\nwill include the user objects of the sender and recipient.\n\nImportant: This method requires an access token with RWD (read, write and direct message)\npermissions.\nConsult The Application Permission Model for more information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/direct_messages_show.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "favorites_create": {
+            "main": "./lib/actions/favorites_create.js",
+            "title": "Favorites the status\nspecified in the ID parameter as the authenticating user. Returns the favorite status when\nsuccessful.\n\nThis process invoked by this method is asynchronous. The immediately returned status may not\nindicate the resultant favorited status of the tweet. A 200 OK response from this method will\nindicate whether the intended action was successful or not.",
+            "description": "Favorites the status\nspecified in the ID parameter as the authenticating user. Returns the favorite status when\nsuccessful.\n\nThis process invoked by this method is asynchronous. The immediately returned status may not\nindicate the resultant favorited status of the tweet. A 200 OK response from this method will\nindicate whether the intended action was successful or not.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/favorites_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "favorites_destroy": {
+            "main": "./lib/actions/favorites_destroy.js",
+            "title": "Un-favorites the status\nspecified in the ID parameter as the authenticating user. Returns the un-favorited status in the\nrequested format when successful.\n\nThis process invoked by this method is asynchronous. The immediately returned status may not\nindicate the resultant favorited status of the tweet. A 200 OK response from this method will\nindicate whether the intended action was successful or not.",
+            "description": "Un-favorites the status\nspecified in the ID parameter as the authenticating user. Returns the un-favorited status in the\nrequested format when successful.\n\nThis process invoked by this method is asynchronous. The immediately returned status may not\nindicate the resultant favorited status of the tweet. A 200 OK response from this method will\nindicate whether the intended action was successful or not.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/favorites_destroy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "favorites_list": {
+            "main": "./lib/actions/favorites_list.js",
+            "title": "Returns the 20 most recent\nTweets favorited by the authenticating or specified user.",
+            "description": "Returns the 20 most recent\nTweets favorited by the authenticating or specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/favorites_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "followers_ids": {
+            "main": "./lib/actions/followers_ids.js",
+            "title": "Returns a cursored collection\nof user IDs for every user following the specified user.\n\nAt this time, results are ordered with the most recent following first -- however, this ordering is\nsubject to unannounced change and eventual consistency issues. Results are given in groups of 5,000\nuser IDs and multiple \"pages\" of results can be navigated through using the next_cursor value in\nsubsequent requests. See Using cursors to navigate collections for more information.\n\nThis method is especially powerful when used in conjunction with GET users/lookup, a method that\nallows you to convert user IDs into full user objects in bulk.",
+            "description": "Returns a cursored collection\nof user IDs for every user following the specified user.\n\nAt this time, results are ordered with the most recent following first -- however, this ordering is\nsubject to unannounced change and eventual consistency issues. Results are given in groups of 5,000\nuser IDs and multiple \"pages\" of results can be navigated through using the next_cursor value in\nsubsequent requests. See Using cursors to navigate collections for more information.\n\nThis method is especially powerful when used in conjunction with GET users/lookup, a method that\nallows you to convert user IDs into full user objects in bulk.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/followers_ids.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "friends_ids": {
+            "main": "./lib/actions/friends_ids.js",
+            "title": "Returns a cursored collection of\nuser IDs for every user the specified user is following (otherwise known as their \"friends\").\n\nAt this time, results are ordered with the most recent following first -- however, this ordering is\nsubject to unannounced change and eventual consistency issues. Results are given in groups of 5,000\nuser IDs and multiple \"pages\" of results can be navigated through using the next_cursor value in\nsubsequent requests. See Using cursors to navigate collections for more information.\n\nThis method is especially powerful when used in conjunction with GET users/lookup, a method that\nallows you to convert user IDs into full user objects in bulk.",
+            "description": "Returns a cursored collection of\nuser IDs for every user the specified user is following (otherwise known as their \"friends\").\n\nAt this time, results are ordered with the most recent following first -- however, this ordering is\nsubject to unannounced change and eventual consistency issues. Results are given in groups of 5,000\nuser IDs and multiple \"pages\" of results can be navigated through using the next_cursor value in\nsubsequent requests. See Using cursors to navigate collections for more information.\n\nThis method is especially powerful when used in conjunction with GET users/lookup, a method that\nallows you to convert user IDs into full user objects in bulk.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/friends_ids.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "friendships_create": {
+            "main": "./lib/actions/friendships_create.js",
+            "title": "Allows the authenticating\nusers to follow the user specified in the ID parameter.\n\nReturns the befriended user in the requested format when successful. Returns a string describing the\nfailure condition when unsuccessful. If you are already friends with the user a HTTP 403 may be\nreturned, though for performance reasons you may get a 200 OK message even if the friendship already\nexists.\n\nActions taken in this method are asynchronous and changes will be eventually consistent.",
+            "description": "Allows the authenticating\nusers to follow the user specified in the ID parameter.\n\nReturns the befriended user in the requested format when successful. Returns a string describing the\nfailure condition when unsuccessful. If you are already friends with the user a HTTP 403 may be\nreturned, though for performance reasons you may get a 200 OK message even if the friendship already\nexists.\n\nActions taken in this method are asynchronous and changes will be eventually consistent.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/friendships_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "friendships_destroy": {
+            "main": "./lib/actions/friendships_destroy.js",
+            "title": "Allows the\nauthenticating\nuser to unfollow the user specified in the ID parameter.\n\nReturns the unfollowed user in the requested format when successful. Returns a string describing the\nfailure condition when unsuccessful.\n\nActions taken in this method are asynchronous and changes will be eventually consistent.",
+            "description": "Allows the\nauthenticating\nuser to unfollow the user specified in the ID parameter.\n\nReturns the unfollowed user in the requested format when successful. Returns a string describing the\nfailure condition when unsuccessful.\n\nActions taken in this method are asynchronous and changes will be eventually consistent.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/friendships_destroy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "friendships_incoming": {
+            "main": "./lib/actions/friendships_incoming.js",
+            "title": "Returns the\nrelationships\nof the authenticating user to the comma-separated list of up to 100 screen_names or user_ids\nprovided. Values for connections can be: following, following_requested, followed_by, none.",
+            "description": "Returns the\nrelationships\nof the authenticating user to the comma-separated list of up to 100 screen_names or user_ids\nprovided. Values for connections can be: following, following_requested, followed_by, none.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/friendships_incoming.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "friendships_lookup": {
+            "main": "./lib/actions/friendships_lookup.js",
+            "title": "Returns the relationships\nof the authenticating user to the comma-separated list of up to 100 screen_names or user_ids\nprovided. Values for connections can be: following, following_requested, followed_by, none.",
+            "description": "Returns the relationships\nof the authenticating user to the comma-separated list of up to 100 screen_names or user_ids\nprovided. Values for connections can be: following, following_requested, followed_by, none.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/friendships_lookup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "friendships_outgoing": {
+            "main": "./lib/actions/friendships_outgoing.js",
+            "title": "Returns a collection of\nnumeric IDs for every protected user for whom the authenticating user has a pending follow request.",
+            "description": "Returns a collection of\nnumeric IDs for every protected user for whom the authenticating user has a pending follow request.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/friendships_outgoing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "friendships_show": {
+            "main": "./lib/actions/friendships_show.js",
+            "title": "Returns detailed information\nabout the relationship between two arbitrary users.",
+            "description": "Returns detailed information\nabout the relationship between two arbitrary users.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/friendships_show.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "friendships_update": {
+            "main": "./lib/actions/friendships_update.js",
+            "title": "Allows one to enable or\ndisable retweets and device notifications from the specified user.",
+            "description": "Allows one to enable or\ndisable retweets and device notifications from the specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/friendships_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "geo_place_id": {
+            "main": "./lib/actions/geo_place_id.js",
+            "title": "Returns all the\ninformation about a known place.Example Values: df51dec6f4ee2b2c",
+            "description": "Returns all the\ninformation about a known place.Example Values: df51dec6f4ee2b2c",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/geo_place_id.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "geo_places": {
+            "main": "./lib/actions/geo_places.js",
+            "title": "Creates a new place object at the\ngiven latitude and longitude.\n\nBefore creating a place you need to query GET geo/similar_places with the latitude, longitude and\nname of the place you wish to create. The query will return an array of places which are similar to\nthe one you wish to create, and a token. If the place you wish to create isn't in the returned array\nyou can use the token with this method to create a new one.",
+            "description": "Creates a new place object at the\ngiven latitude and longitude.\n\nBefore creating a place you need to query GET geo/similar_places with the latitude, longitude and\nname of the place you wish to create. The query will return an array of places which are similar to\nthe one you wish to create, and a token. If the place you wish to create isn't in the returned array\nyou can use the token with this method to create a new one.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/geo_places.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "geo_reverse_geocode": {
+            "main": "./lib/actions/geo_reverse_geocode.js",
+            "title": "Given a latitude and a\nlongitude, searches for up to 20 places that can be used as a place_id when updating a status.\n\nThis request is an informative call and will deliver generalized results about geography",
+            "description": "Given a latitude and a\nlongitude, searches for up to 20 places that can be used as a place_id when updating a status.\n\nThis request is an informative call and will deliver generalized results about geography",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/geo_reverse_geocode.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "geo_search": {
+            "main": "./lib/actions/geo_search.js",
+            "title": "Search for places that can be\nattached to a statuses/update. Given a latitude and a longitude pair, an IP address, or a name, this\nrequest will return a list of all the valid places that can be used as the place_id when updating a\nstatus.\n\nConceptually, a query can be made from the user's location, retrieve a list of places, have the user\nvalidate the location he or she is at, and then send the ID of this location with a call to POST\nstatuses/update.\n\nThis is the recommended method to use find places that can be attached to statuses/update. Unlike\nGET geo/reverse_geocode which provides raw data access, this endpoint can potentially re-order\nplaces with regards to the user who is authenticated. This approach is also preferred for\ninteractive place matching with the user.",
+            "description": "Search for places that can be\nattached to a statuses/update. Given a latitude and a longitude pair, an IP address, or a name, this\nrequest will return a list of all the valid places that can be used as the place_id when updating a\nstatus.\n\nConceptually, a query can be made from the user's location, retrieve a list of places, have the user\nvalidate the location he or she is at, and then send the ID of this location with a call to POST\nstatuses/update.\n\nThis is the recommended method to use find places that can be attached to statuses/update. Unlike\nGET geo/reverse_geocode which provides raw data access, this endpoint can potentially re-order\nplaces with regards to the user who is authenticated. This approach is also preferred for\ninteractive place matching with the user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/geo_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "geo_similar_places": {
+            "main": "./lib/actions/geo_similar_places.js",
+            "title": "Locates places near the\ngiven coordinates which are similar in name.\n\nConceptually you would use this method to get a list of known places to choose from first. Then, if\nthe desired place doesn't exist, make a request to POST geo/place to create a new one.\n\nThe token contained in the response is the token needed to be able to create a new place.",
+            "description": "Locates places near the\ngiven coordinates which are similar in name.\n\nConceptually you would use this method to get a list of known places to choose from first. Then, if\nthe desired place doesn't exist, make a request to POST geo/place to create a new one.\n\nThe token contained in the response is the token needed to be able to create a new place.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/geo_similar_places.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "help_configurations": {
+            "main": "./lib/actions/help_configurations.js",
+            "title": "Returns the current\nconfiguration used by Twitter including twitter.com slugs which are not usernames, maximum photo\nresolutions, and t.co URL lengths.\n\nIt is recommended applications request this endpoint when they are loaded, but no more than once a\nday.",
+            "description": "Returns the current\nconfiguration used by Twitter including twitter.com slugs which are not usernames, maximum photo\nresolutions, and t.co URL lengths.\n\nIt is recommended applications request this endpoint when they are loaded, but no more than once a\nday.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/help_configurations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "help_languages": {
+            "main": "./lib/actions/help_languages.js",
+            "title": "Returns the list of languages\nsupported by Twitter along with their ISO 639-1 code. The ISO 639-1 code is the two letter value to\nuse if you include lang with any of your requests.",
+            "description": "Returns the list of languages\nsupported by Twitter along with their ISO 639-1 code. The ISO 639-1 code is the two letter value to\nuse if you include lang with any of your requests.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/help_languages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "help_privacy": {
+            "main": "./lib/actions/help_privacy.js",
+            "title": "Returns Twitter's Privacy Policy",
+            "description": "Returns Twitter's Privacy Policy",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/help_privacy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "help_tos": {
+            "main": "./lib/actions/help_tos.js",
+            "title": "Returns the Twitter Terms of Service\nin the requested format. These are not the same as the Developer Rules of the Road.",
+            "description": "Returns the Twitter Terms of Service\nin the requested format. These are not the same as the Developer Rules of the Road.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/help_tos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_create": {
+            "main": "./lib/actions/lists_create.js",
+            "title": "Creates a new list for the\nauthenticated user. Note that you can't create more than 20 lists per account.",
+            "description": "Creates a new list for the\nauthenticated user. Note that you can't create more than 20 lists per account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_destroy": {
+            "main": "./lib/actions/lists_destroy.js",
+            "title": "Deletes the specified list.\nThe authenticated user must own the list to be able to destroy it.",
+            "description": "Deletes the specified list.\nThe authenticated user must own the list to be able to destroy it.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_destroy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_list": {
+            "main": "./lib/actions/lists_list.js",
+            "title": "Returns all lists the\nauthenticating or specified user subscribes to, including their own. The user is specified using the\nuser_id or screen_name parameters. If no user is given, the authenticating user is used.\n\nThis method used to be GET lists in version 1.0 of the API and has been renamed for consistency with\nother call.",
+            "description": "Returns all lists the\nauthenticating or specified user subscribes to, including their own. The user is specified using the\nuser_id or screen_name parameters. If no user is given, the authenticating user is used.\n\nThis method used to be GET lists in version 1.0 of the API and has been renamed for consistency with\nother call.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_members": {
+            "main": "./lib/actions/lists_members.js",
+            "title": "Returns the members of the\nspecified list. Private list members will only be shown if the authenticated user owns the specified\nlist.",
+            "description": "Returns the members of the\nspecified list. Private list members will only be shown if the authenticated user owns the specified\nlist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_members.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_members_create": {
+            "main": "./lib/actions/lists_members_create.js",
+            "title": "Add a member to a list.\nThe authenticated user must own the list to be able to add members to it. Note that lists can't have\nmore than 500 members.",
+            "description": "Add a member to a list.\nThe authenticated user must own the list to be able to add members to it. Note that lists can't have\nmore than 500 members.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_members_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_members_create_all": {
+            "main": "./lib/actions/lists_members_create_all.js",
+            "title": "Adds multiple\nmembers to a list, by specifying a comma-separated list of member ids or screen names. The\nauthenticated user must own the list to be able to add members to it. Note that lists can't have\nmore than 500 members, and you are limited to adding up to 100 members to a list at a time with this\nmethod.\n\nPlease note that there can be issues with lists that rapidly remove and add memberships. Take care\nwhen using these methods such that you are not too rapidly switching between removals and adds on\nthe same list.",
+            "description": "Adds multiple\nmembers to a list, by specifying a comma-separated list of member ids or screen names. The\nauthenticated user must own the list to be able to add members to it. Note that lists can't have\nmore than 500 members, and you are limited to adding up to 100 members to a list at a time with this\nmethod.\n\nPlease note that there can be issues with lists that rapidly remove and add memberships. Take care\nwhen using these methods such that you are not too rapidly switching between removals and adds on\nthe same list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_members_create_all.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_members_destroy": {
+            "main": "./lib/actions/lists_members_destroy.js",
+            "title": "Removes the specified\nmember from the list. The authenticated user must be the list's owner to remove members from the\nlist.",
+            "description": "Removes the specified\nmember from the list. The authenticated user must be the list's owner to remove members from the\nlist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_members_destroy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_members_destroy_all": {
+            "main": "./lib/actions/lists_members_destroy_all.js",
+            "title": "Removes multiple\nmembers from a list, by specifying a comma-separated list of member ids or screen names. The\nauthenticated user must own the list to be able to remove members from it. Note that lists can't\nhave more than 500 members, and you are limited to removing up to 100 members to a list at a time\nwith this method.\n\nPlease note that there can be issues with lists that rapidly remove and add memberships. Take care\nwhen using these methods such that you are not too rapidly switching between removals and adds on\nthe same list.",
+            "description": "Removes multiple\nmembers from a list, by specifying a comma-separated list of member ids or screen names. The\nauthenticated user must own the list to be able to remove members from it. Note that lists can't\nhave more than 500 members, and you are limited to removing up to 100 members to a list at a time\nwith this method.\n\nPlease note that there can be issues with lists that rapidly remove and add memberships. Take care\nwhen using these methods such that you are not too rapidly switching between removals and adds on\nthe same list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_members_destroy_all.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_members_show": {
+            "main": "./lib/actions/lists_members_show.js",
+            "title": "Check if the specified\nuser is a member of the specified list.",
+            "description": "Check if the specified\nuser is a member of the specified list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_members_show.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_memberships": {
+            "main": "./lib/actions/lists_memberships.js",
+            "title": "Returns the lists the\nspecified user has been added to. If user_id or screen_name are not provided the memberships for the\nauthenticating user are returned.",
+            "description": "Returns the lists the\nspecified user has been added to. If user_id or screen_name are not provided the memberships for the\nauthenticating user are returned.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_memberships.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_show": {
+            "main": "./lib/actions/lists_show.js",
+            "title": "Returns the specified list.\nPrivate lists will only be shown if the authenticated user owns the specified list.",
+            "description": "Returns the specified list.\nPrivate lists will only be shown if the authenticated user owns the specified list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_show.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_statuses": {
+            "main": "./lib/actions/lists_statuses.js",
+            "title": "Returns tweet timeline for\nmembers of the specified list. Retweets are included by default. You can use the include_rts=false\nparameter to omit retweet objects.",
+            "description": "Returns tweet timeline for\nmembers of the specified list. Retweets are included by default. You can use the include_rts=false\nparameter to omit retweet objects.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_statuses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_subscribers": {
+            "main": "./lib/actions/lists_subscribers.js",
+            "title": "Returns the subscribers of\nthe specified list. Private list subscribers will only be shown if the authenticated user owns the\nspecified list.",
+            "description": "Returns the subscribers of\nthe specified list. Private list subscribers will only be shown if the authenticated user owns the\nspecified list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_subscribers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_subscribers_create": {
+            "main": "./lib/actions/lists_subscribers_create.js",
+            "title": "Subscribes the\nauthenticated user to the specified list.",
+            "description": "Subscribes the\nauthenticated user to the specified list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_subscribers_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_subscribers_destroy": {
+            "main": "./lib/actions/lists_subscribers_destroy.js",
+            "title": "Unsubscribes the\nauthenticated user from the specified list.",
+            "description": "Unsubscribes the\nauthenticated user from the specified list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_subscribers_destroy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_subscribers_show": {
+            "main": "./lib/actions/lists_subscribers_show.js",
+            "title": "Check if the specified\nuser is a subscriber of the specified list. Returns the user if they are subscriber.",
+            "description": "Check if the specified\nuser is a subscriber of the specified list. Returns the user if they are subscriber.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_subscribers_show.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_subscriptions": {
+            "main": "./lib/actions/lists_subscriptions.js",
+            "title": "Obtain a collection of\nthe lists the specified user is subscribed to, 20 lists per page by default. Does not include the\nuser's own lists.",
+            "description": "Obtain a collection of\nthe lists the specified user is subscribed to, 20 lists per page by default. Does not include the\nuser's own lists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_subscriptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "lists_update": {
+            "main": "./lib/actions/lists_update.js",
+            "title": "Updates the specified list. The\nauthenticated user must own the list to be able to update it.",
+            "description": "Updates the specified list. The\nauthenticated user must own the list to be able to update it.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/lists_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "saved_searches_create": {
+            "main": "./lib/actions/saved_searches_create.js",
+            "title": "Create a new saved\nsearch for the authenticated user. A user may only have 25 saved searches.",
+            "description": "Create a new saved\nsearch for the authenticated user. A user may only have 25 saved searches.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/saved_searches_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "saved_searches_destroy": {
+            "main": "./lib/actions/saved_searches_destroy.js",
+            "title": "Destroys a\nsaved\nsearch for the authenticating user. The authenticating user must be the owner of saved search id\nbeing destroyed.",
+            "description": "Destroys a\nsaved\nsearch for the authenticating user. The authenticating user must be the owner of saved search id\nbeing destroyed.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/saved_searches_destroy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "saved_searches_list": {
+            "main": "./lib/actions/saved_searches_list.js",
+            "title": "Returns the authenticated\nuser's saved search queries.",
+            "description": "Returns the authenticated\nuser's saved search queries.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/saved_searches_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "savedsearchesid": {
+            "main": "./lib/actions/savedsearchesid.js",
+            "title": "Returns the\nauthenticated user's saved search queries.",
+            "description": "Returns the\nauthenticated user's saved search queries.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/savedsearchesid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "search_tweets": {
+            "main": "./lib/actions/search_tweets.js",
+            "title": "Returns a collection of\nrelevant Tweets matching a specified query.\n\nPlease note that Twitter's search service and, by extension, the Search API is not meant to be an\nexhaustive source of Tweets. Not all Tweets will be indexed or made available via the search\ninterface.\n\nIn API v1.1, the response format of the Search API has been improved to return Tweet objects more\nsimilar to the objects you'll find across the REST API and platform. You may need to tolerate some\ninconsistencies and variance in perspectival values (fields that pertain to the perspective of the\nauthenticating user) and embedded user objects.",
+            "description": "Returns a collection of\nrelevant Tweets matching a specified query.\n\nPlease note that Twitter's search service and, by extension, the Search API is not meant to be an\nexhaustive source of Tweets. Not all Tweets will be indexed or made available via the search\ninterface.\n\nIn API v1.1, the response format of the Search API has been improved to return Tweet objects more\nsimilar to the objects you'll find across the REST API and platform. You may need to tolerate some\ninconsistencies and variance in perspectival values (fields that pertain to the perspective of the\nauthenticating user) and embedded user objects.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/search_tweets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statuses_destroy": {
+            "main": "./lib/actions/statuses_destroy.js",
+            "title": "Destroys the status\nspecified by the required ID parameter. The authenticating user must be the author of the specified\nstatus. Returns the destroyed status if successful.",
+            "description": "Destroys the status\nspecified by the required ID parameter. The authenticating user must be the author of the specified\nstatus. Returns the destroyed status if successful.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statuses_destroy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statuses_home_timeline": {
+            "main": "./lib/actions/statuses_home_timeline.js",
+            "title": "Returns a collection\nof the most recent Tweets and retweets posted by the authenticating user and the users they follow.\nThe home timeline is central to how most users interact with the Twitter service.\n\nUp to 800 Tweets are obtainable on the home timeline. It is more volatile for users that follow many\nusers or follow users who tweet frequently.",
+            "description": "Returns a collection\nof the most recent Tweets and retweets posted by the authenticating user and the users they follow.\nThe home timeline is central to how most users interact with the Twitter service.\n\nUp to 800 Tweets are obtainable on the home timeline. It is more volatile for users that follow many\nusers or follow users who tweet frequently.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statuses_home_timeline.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statuses_mentions_timeline": {
+            "main": "./lib/actions/statuses_mentions_timeline.js",
+            "title": "Returns the 20\nmost recent mentions (tweets containing a users's @screen_name) for the authenticating user.The\ntimeline returned is the equivalent of the one seen when you view your mentions on twitter.com.This\nmethod can only return up to 800 statuses.This method will include retweets in the JSON response\nregardless of whether the include_rts parameter is set.",
+            "description": "Returns the 20\nmost recent mentions (tweets containing a users's @screen_name) for the authenticating user.The\ntimeline returned is the equivalent of the one seen when you view your mentions on twitter.com.This\nmethod can only return up to 800 statuses.This method will include retweets in the JSON response\nregardless of whether the include_rts parameter is set.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statuses_mentions_timeline.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statuses_oembed": {
+            "main": "./lib/actions/statuses_oembed.js",
+            "title": "Returns information allowing\nthe creation of an embedded representation of a Tweet on third party sites. See the oEmbed\nspecification (http://oembed.com) for information about the response format. Either the id or url\nparameters must be specified in a request, it is not necessary to include both. While this endpoint\nallows a bit of customization for the final appearance of the embedded Tweet, be aware that the\nappearance of the rendered Tweet may change over time to be consistent with Twitter's Display\nGuidelines (https://dev.twitter.com/terms/display-guidelines). Do not rely on any class or id\nparameters to stay constant in the returned markup.",
+            "description": "Returns information allowing\nthe creation of an embedded representation of a Tweet on third party sites. See the oEmbed\nspecification (http://oembed.com) for information about the response format. Either the id or url\nparameters must be specified in a request, it is not necessary to include both. While this endpoint\nallows a bit of customization for the final appearance of the embedded Tweet, be aware that the\nappearance of the rendered Tweet may change over time to be consistent with Twitter's Display\nGuidelines (https://dev.twitter.com/terms/display-guidelines). Do not rely on any class or id\nparameters to stay constant in the returned markup.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statuses_oembed.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statusesretweetid": {
+            "main": "./lib/actions/statusesretweetid.js",
+            "title": "Retweets a tweet.\nReturns\nthe original tweet with retweet details embedded.",
+            "description": "Retweets a tweet.\nReturns\nthe original tweet with retweet details embedded.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statusesretweetid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statuses_retweets": {
+            "main": "./lib/actions/statuses_retweets.js",
+            "title": "Returns up to 100 of\nthe\nfirst retweets of a given tweet.",
+            "description": "Returns up to 100 of\nthe\nfirst retweets of a given tweet.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statuses_retweets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statuses_show": {
+            "main": "./lib/actions/statuses_show.js",
+            "title": "Returns a single status,\nspecified by the id parameter below. The status's author will be returned inline.",
+            "description": "Returns a single status,\nspecified by the id parameter below. The status's author will be returned inline.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statuses_show.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statuses_update": {
+            "main": "./lib/actions/statuses_update.js",
+            "title": "Updates the authenticating\nuser's status, also known as tweeting. To upload an image to accompany the tweet, use POST\nstatuses/update_with_media (https://dev.twitter.com/docs/api/1/post/statuses/update_with_media). For\neach update attempt, the update text is compared with the authenticating user's recent tweets. Any\nattempt that would result in duplication will be blocked, resulting in a 403 error. Therefore, a\nuser cannot submit the same status twice in a row. While not rate limited by the API a user is\nlimited in the number of tweets they can create at a time. If the number of updates posted by the\nuser reaches the current allowed limit this method will return an HTTP 403 error.",
+            "description": "Updates the authenticating\nuser's status, also known as tweeting. To upload an image to accompany the tweet, use POST\nstatuses/update_with_media (https://dev.twitter.com/docs/api/1/post/statuses/update_with_media). For\neach update attempt, the update text is compared with the authenticating user's recent tweets. Any\nattempt that would result in duplication will be blocked, resulting in a 403 error. Therefore, a\nuser cannot submit the same status twice in a row. While not rate limited by the API a user is\nlimited in the number of tweets they can create at a time. If the number of updates posted by the\nuser reaches the current allowed limit this method will return an HTTP 403 error.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statuses_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statuses_update_with_media": {
+            "main": "./lib/actions/statuses_update_with_media.js",
+            "title": "Updates the\nauthenticating user's status and attaches media for upload. Unlike POST statuses/update\n(https://dev.twitter.com/docs/api/1.1/post/statuses/update), this method expects raw multipart data.\nYour POST request's Content-Type should be set to multipart/form-data with the media[] parameter.\nThe Tweet text will be rewritten to include the media URL(s), which will reduce the number of\ncharacters allowed in the Tweet text. If the URL(s) cannot be appended without text truncation, the\ntweet will be rejected and this method will return an HTTP 403 error. Important: Make sure that\nyou're using upload.twitter.com as your host while posting statuses with media. It is strongly\nrecommended to use SSL with this method.",
+            "description": "Updates the\nauthenticating user's status and attaches media for upload. Unlike POST statuses/update\n(https://dev.twitter.com/docs/api/1.1/post/statuses/update), this method expects raw multipart data.\nYour POST request's Content-Type should be set to multipart/form-data with the media[] parameter.\nThe Tweet text will be rewritten to include the media URL(s), which will reduce the number of\ncharacters allowed in the Tweet text. If the URL(s) cannot be appended without text truncation, the\ntweet will be rejected and this method will return an HTTP 403 error. Important: Make sure that\nyou're using upload.twitter.com as your host while posting statuses with media. It is strongly\nrecommended to use SSL with this method.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statuses_update_with_media.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "statuses_user_timeline": {
+            "main": "./lib/actions/statuses_user_timeline.js",
+            "title": "Returns the 20 most\nrecent statuses posted by the authenticating user. It is also possible to request another user's\ntimeline by using the screen_name or user_id parameter. The other users timeline will only be\nvisible if they are not protected, or if the authenticating user's follow request was accepted by\nthe protected user. The timeline returned is the equivalent of the one seen when you view a user's\nprofile on twitter.com. This method can only return up to 3,200 of a user's most recent statuses.\nNative retweets of other statuses by the user is included in this total, regardless of whether\ninclude_rts is specified when requesting this resource. This method will not include retweets in the\nXML and JSON responses unless the include_rts parameter is set. The RSS and Atom responses will\nalways include retweets as statuses prefixed with RT, regardless of provided parameters. Always\nspecify either an user_id or screen_name when requesting a user timeline.",
+            "description": "Returns the 20 most\nrecent statuses posted by the authenticating user. It is also possible to request another user's\ntimeline by using the screen_name or user_id parameter. The other users timeline will only be\nvisible if they are not protected, or if the authenticating user's follow request was accepted by\nthe protected user. The timeline returned is the equivalent of the one seen when you view a user's\nprofile on twitter.com. This method can only return up to 3,200 of a user's most recent statuses.\nNative retweets of other statuses by the user is included in this total, regardless of whether\ninclude_rts is specified when requesting this resource. This method will not include retweets in the\nXML and JSON responses unless the include_rts parameter is set. The RSS and Atom responses will\nalways include retweets as statuses prefixed with RT, regardless of provided parameters. Always\nspecify either an user_id or screen_name when requesting a user timeline.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/statuses_user_timeline.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "trends_available": {
+            "main": "./lib/actions/trends_available.js",
+            "title": "Returns the locations that\nTwitter has trending topic information for.\n\nThe response is an array of \"locations\" that encode the location's WOEID and some other\nhuman-readable information such as a canonical name and country the location belongs in.\n\nA WOEID is a Yahoo! Where On Earth ID.",
+            "description": "Returns the locations that\nTwitter has trending topic information for.\n\nThe response is an array of \"locations\" that encode the location's WOEID and some other\nhuman-readable information such as a canonical name and country the location belongs in.\n\nA WOEID is a Yahoo! Where On Earth ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/trends_available.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "trends_closest": {
+            "main": "./lib/actions/trends_closest.js",
+            "title": "Returns the locations that\nTwitter has trending topic information for, closest to a specified location.\n\nThe response is an array of \"locations\" that encode the location's WOEID and some other\nhuman-readable information such as a canonical name and country the location belongs in.\n\nA WOEID is a Yahoo! Where On Earth ID.",
+            "description": "Returns the locations that\nTwitter has trending topic information for, closest to a specified location.\n\nThe response is an array of \"locations\" that encode the location's WOEID and some other\nhuman-readable information such as a canonical name and country the location belongs in.\n\nA WOEID is a Yahoo! Where On Earth ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/trends_closest.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "trends_place": {
+            "main": "./lib/actions/trends_place.js",
+            "title": "Returns the top 10 trending\ntopics for a specific WOEID, if trending information is available for it.\n\nThe response is an array of \"trend\" objects that encode the name of the trending topic, the query\nparameter that can be used to search for the topic on Twitter Search, and the Twitter Search URL.\n\nThis information is cached for 5 minutes. Requesting more frequently than that will not return any\nmore data, and will count against your rate limit usage.",
+            "description": "Returns the top 10 trending\ntopics for a specific WOEID, if trending information is available for it.\n\nThe response is an array of \"trend\" objects that encode the name of the trending topic, the query\nparameter that can be used to search for the topic on Twitter Search, and the Twitter Search URL.\n\nThis information is cached for 5 minutes. Requesting more frequently than that will not return any\nmore data, and will count against your rate limit usage.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/trends_place.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "users_contributees": {
+            "main": "./lib/actions/users_contributees.js",
+            "title": "Returns a collection of\nusers that the specified user can contribute to.",
+            "description": "Returns a collection of\nusers that the specified user can contribute to.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/users_contributees.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "users_contributors": {
+            "main": "./lib/actions/users_contributors.js",
+            "title": "Returns a collection of\nusers who can contribute to the specified account.",
+            "description": "Returns a collection of\nusers who can contribute to the specified account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/users_contributors.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "users_lookup": {
+            "main": "./lib/actions/users_lookup.js",
+            "title": "Returns fully-hydrated user\nobjects for up to 100 users per request, as specified by comma-separated values passed to the\nuser_id and/or screen_name parameters.\n\nThis method is especially useful when used in conjunction with collections of user IDs returned from\nGET friends/ids and GET followers/ids.\n\nGET users/show is used to retrieve a single user object.",
+            "description": "Returns fully-hydrated user\nobjects for up to 100 users per request, as specified by comma-separated values passed to the\nuser_id and/or screen_name parameters.\n\nThis method is especially useful when used in conjunction with collections of user IDs returned from\nGET friends/ids and GET followers/ids.\n\nGET users/show is used to retrieve a single user object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/users_lookup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "users_report_spam": {
+            "main": "./lib/actions/users_report_spam.js",
+            "title": "The user\nspecified in the id is blocked by the authenticated user and reported as a spammer.",
+            "description": "The user\nspecified in the id is blocked by the authenticated user and reported as a spammer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/users_report_spam.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "users_search": {
+            "main": "./lib/actions/users_search.js",
+            "title": "Provides a simple,\nrelevance-based search interface to public user accounts on Twitter. Try querying by topical\ninterest, full name, company name, location, or other criteria. Exact match searches are not\nsupported.\n\nOnly the first 1,000 matching results are available.",
+            "description": "Provides a simple,\nrelevance-based search interface to public user accounts on Twitter. Try querying by topical\ninterest, full name, company name, location, or other criteria. Exact match searches are not\nsupported.\n\nOnly the first 1,000 matching results are available.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/users_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "users_show": {
+            "main": "./lib/actions/users_show.js",
+            "title": "Returns a variety of information\nabout the user specified by the required user_id or screen_name parameter. The author's most recent\nTweet will be returned inline when possible.\n\nGET users/lookup is used to retrieve a bulk collection of user objects.",
+            "description": "Returns a variety of information\nabout the user specified by the required user_id or screen_name parameter. The author's most recent\nTweet will be returned inline when possible.\n\nGET users/lookup is used to retrieve a bulk collection of user objects.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/users_show.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "users_suggestions": {
+            "main": "./lib/actions/users_suggestions.js",
+            "title": "Access to Twitter's\nsuggested user list. This returns the list of suggested user categories. The category can be used in\nGET users/suggestions/:slug to get the users in that category.",
+            "description": "Access to Twitter's\nsuggested user list. This returns the list of suggested user categories. The category can be used in\nGET users/suggestions/:slug to get the users in that category.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/users_suggestions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "users_suggestions_slug": {
+            "main": "./lib/actions/users_suggestions_slug.js",
+            "title": "Access the users in\na given category of the Twitter suggested user list. It is recommended that applications cache this\ndata for no more than one hour.",
+            "description": "Access the users in\na given category of the Twitter suggested user list. It is recommended that applications cache this\ndata for no more than one hour.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/users_suggestions_slug.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "users_suggestionsslugmembers": {
+            "main": "./lib/actions/users_suggestionsslugmembers.js",
+            "title": "Access the\nusers in a given category of the Twitter suggested user list and return their most recent status if\nthey are not a protected user.",
+            "description": "Access the\nusers in a given category of the Twitter suggested user list and return their most recent status if\nthey are not a protected user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/users_suggestionsslugmembers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
